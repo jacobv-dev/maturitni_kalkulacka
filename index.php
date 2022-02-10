@@ -20,35 +20,75 @@
 
       <div class="radio_up">
         <label>
-          <input type="radio" name="radio" checked />
+          <input type="radio" name="radio" value="cj" checked />
           <span>Český jazyk</span>
         </label>
+
         <label>
-          <input type="radio" name="radio" />
+          <input type="radio" name="radio" value="aj" />
           <span>Anglický jazyk</span>
         </label>
+
         <label>
-          <input type="radio" name="radio" />
+          <input type="radio" name="radio" value="jcj" />
           <span>Jiný cizí jazyk</span>
         </label>
       </div>
 
       <div class="input_middle">
         <label>
-          <input type="number" name="number" placeholder="BODY" />
-          <span>Ústní část</span>
-        </label>
-        <label>
-          <input type="number" name="number" placeholder="BODY" />
+          <input type="number" name="pisemna" placeholder="BODY" required />
           <span>Písemná část</span>
+        </label>
+
+        <label>
+          <input type="number" name="ustni" placeholder="BODY" required />
+          <span>Ústní část</span>
         </label>
       </div>
 
       <div class="submit_bottom">
-        <input type="submit" value="Vypočítat">
+        <input type="submit" value="Vypočítat" name="submit">
       </div>
 
     </form>
+
+    <div class="answer">
+      <?php
+      if (isset($_POST['submit'])) {
+
+        $select = $_POST["radio"];
+
+        if ($select == "cj") { // Načtení výsledku radio buttonu do "paměti"
+          $predmet = "Čeština";
+          $pisemna_cast_vaha = 30;
+          $ustni_cast_vaha = 28;
+        } else if ($select == "aj") {
+          $predmet = "Angličtina";
+          $pisemna_cast_vaha = 24;
+          $ustni_cast_vaha = 18;
+        } else if ($select == "jcj") {
+          $predmet = "Jiný cízí jazyk";
+          $pisemna_cast_vaha = 24;
+          $ustni_cast_vaha = 36;
+        };
+      
+        $pisemna_cast = $_POST["pisemna"]; // Načtení výsledku inputu do "paměti"
+        $ustni_cast = $_POST["ustni"]; // Načtení výsledku inputu do "paměti"
+
+        $konecny_vysledek = (($pisemna_cast / $pisemna_cast_vaha) * 40) + (($ustni_cast / $ustni_cast_vaha) * 60);
+
+        if ($konecny_vysledek > 87) {
+          $vysledna_znamka = 1;
+        } else if ($konecny_vysledek > 74 && $konecny_vysledek <= 87) {
+          $vysledna_znamka = 2;
+        } else if () {}
+
+        echo $predmet . "<br>" . $konecny_vysledek . " %";
+      
+      };
+      ?>
+    </div>
   </div>
 
 </body>

@@ -78,6 +78,8 @@ label span {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
   padding: 20px;
 }
 
@@ -128,19 +130,24 @@ label span {
 }
 
 .submit_bottom input {
-	color: #00005c;
-	box-shadow: inset 0 0 0 2px #00005c;
-	padding: 1rem;
-	text-align: center;
-	font-size: inherit;
-	border: none;
-	transition: 250ms ease-in-out;
-	background-color: white;
-	cursor: pointer;
+  color: #00005c;
+  box-shadow: inset 0 0 0 2px #00005c;
+  padding: 1rem;
+  text-align: center;
+  font-size: inherit;
+  border: none;
+  transition: 250ms ease-in-out;
+  background-color: white;
+  cursor: pointer;
 }
 
 .submit_bottom input:hover {
-	background-color: #00005c;
-	color: white;
-	transition: 250ms ease-in-out;
+  background-color: #00005c;
+  color: white;
+  transition: 250ms ease-in-out;
+}
+
+.answer {
+	margin-top: 2rem;
+	text-align: center;
 }
