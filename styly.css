@@ -1,57 +1,55 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Roboto", sans-serif;
-	font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
 }
 
 body {
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 form {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	border: 1px solid black;
-	width: 80vw;
-	height: 80vh;
-	
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 80vw;
+  height: 80vh;
 }
 
 .horni_vyber {
-	display: flex;
-	column-gap: 2vw;
+  display: flex;
+  column-gap: 2vw;
 }
 
-input[type=radio] {
-    display: block;
-    margin: 0 auto;
+input[type="radio"] {
+  display: block;
+  margin: 0 auto;
 }
 
-input[type=number] {
-    display: block;
-    margin: 0 auto;
-	
+input[type="number"] {
+  display: block;
+  margin: 0 auto;
 }
 
 label {
-    display: inline-block;
+  display: inline-block;
 }
 
 .spodni_vyber {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	column-gap: 4vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 4vw;
 }
