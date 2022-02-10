@@ -15,26 +15,42 @@
 
 <body>
 
-  <form method="post" action="#forms">
+  <div class="container">
+    <form method="POST">
 
-    <div class="horni_vyber">
-      <label><input type="radio" name="radioset" />Čeština</label>
-      <label><input type="radio" name="radioset" />Angličtina</label>
-      <label><input type="radio" name="radioset" />Jiný cizí jazyk</label>
-    </div>
+      <div class="radio_up">
+        <label>
+          <input type="radio" name="radio" checked />
+          <span>Český jazyk</span>
+        </label>
+        <label>
+          <input type="radio" name="radio" />
+          <span>Anglický jazyk</span>
+        </label>
+        <label>
+          <input type="radio" name="radio" />
+          <span>Jiný cizí jazyk</span>
+        </label>
+      </div>
 
-    <br>
+      <div class="input_middle">
+        <label>
+          <input type="number" name="number" placeholder="BODY" />
+          <span>Ústní část</span>
+        </label>
+        <label>
+          <input type="number" name="number" placeholder="BODY" />
+          <span>Písemná část</span>
+        </label>
+      </div>
 
-    <div class="spodni_vyber">
-      <label><input type="number" placeholder="Body z písemné části" name="cm" required />Písemná část</label>
+      <div class="submit_bottom">
+        <input type="submit" value="Vypočítat">
+      </div>
 
-      <label><input type="number" placeholder="Body z ústní části" name="kg" required />Ústní část</label>
-    </div>
+    </form>
+  </div>
 
-    <br>
-
-    <input class="ok" type="submit" value="Spočítat" />
-  </form>
 </body>
 
 </html>

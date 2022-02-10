@@ -1,55 +1,146 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Inter");
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*:after,
+*:before {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  user-select: none;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  color: #000021;
+  font-size: calc(1em + 1.25vw);
+  background-color: #e6e6ef;
 }
 
 form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
-  border: 1px solid black;
-  width: 80vw;
-  height: 80vh;
-}
-
-.horni_vyber {
-  display: flex;
-  column-gap: 2vw;
-}
-
-input[type="radio"] {
-  display: block;
-  margin: 0 auto;
-}
-
-input[type="number"] {
-  display: block;
-  margin: 0 auto;
 }
 
 label {
-  display: inline-block;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
 }
 
-.spodni_vyber {
+.radio_up label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.radio_up label input:checked + span {
+  background-color: #d6d6e5;
+}
+
+.radio_up label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+
+label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+
+.radio_up label span:hover {
+  background-color: #d6d6e5;
+}
+
+.radio_up label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+
+.radio_up {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  column-gap: 4vw;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+}
+
+.input_middle {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.input_middle label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.input_middle input {
+  color: #00005c;
+  box-shadow: inset 0 0 0 2px #00005c;
+  padding: 1rem;
+  text-align: center;
+  font-size: inherit;
+  border: none;
+}
+
+.submit_bottom {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.submit_bottom input {
+	color: #00005c;
+	box-shadow: inset 0 0 0 2px #00005c;
+	padding: 1rem;
+	text-align: center;
+	font-size: inherit;
+	border: none;
+	transition: 250ms ease-in-out;
+	background-color: white;
+	cursor: pointer;
+}
+
+.submit_bottom input:hover {
+	background-color: #00005c;
+	color: white;
+	transition: 250ms ease-in-out;
 }
