@@ -37,12 +37,12 @@
 
       <div class="input_middle">
         <label>
-          <input type="number" name="pisemna" placeholder="BODY" required />
+          <input type="number" name="pisemna" placeholder="BODY" min="0" max="30" required />
           <span>Písemná část</span>
         </label>
 
         <label>
-          <input type="number" name="ustni" placeholder="BODY" required />
+          <input type="number" name="ustni" placeholder="BODY" min="0" max="36" required />
           <span>Ústní část</span>
         </label>
       </div>
@@ -59,7 +59,7 @@
 
         $select = $_POST["radio"];
 
-        if ($select == "cj") { // Načtení výsledku radio buttonu do "paměti"
+        if ($select == "cj") { // Načtení výsledku radio buttonu
           $predmet = "Čeština";
           $pisemna_cast_vaha = 30;
           $ustni_cast_vaha = 28;
@@ -73,8 +73,8 @@
           $ustni_cast_vaha = 36;
         };
 
-        $pisemna_cast = $_POST["pisemna"]; // Načtení výsledku inputu do "paměti"
-        $ustni_cast = $_POST["ustni"]; // Načtení výsledku inputu do "paměti"
+        $pisemna_cast = $_POST["pisemna"]; // Načtení výsledku inputu
+        $ustni_cast = $_POST["ustni"]; // Načtení výsledku inputu
 
         $konecny_vysledek = (($pisemna_cast / $pisemna_cast_vaha) * 40) + (($ustni_cast / $ustni_cast_vaha) * 60); // Výsledek v % po celém výpočtu
 
@@ -96,6 +96,8 @@
       };
       ?>
     </div>
+
+    <p style="position: absolute; bottom: 0; left: 0; text-align: center; width: 100%; margin: .75rem 0; font-size: .75rem;">&copy; Jakub Vorel, Robert Hlad, Tomáš Foltyn</p>
   </div>
 
 </body>

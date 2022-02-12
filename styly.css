@@ -7,6 +7,8 @@
   text-transform: uppercase;
   font-weight: 500;
   user-select: none;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -49,6 +51,7 @@ label span {
   padding: 0.375em 0.75em 0.375em 0.375em;
   border-radius: 99em;
   transition: 0.25s ease;
+  text-align: center;
 }
 
 .radio_up label span:hover {
@@ -69,18 +72,15 @@ label span {
 }
 
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  row-gap: 4rem;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 20px;
+  position: relative;
 }
 
 .radio_up {
@@ -109,6 +109,7 @@ label span {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 45%;
 }
 
 .input_middle input {
@@ -118,6 +119,7 @@ label span {
   text-align: center;
   font-size: inherit;
   border: none;
+  width: 100%;
 }
 
 .submit_bottom {
@@ -148,6 +150,25 @@ label span {
 }
 
 .answer {
-	margin-top: 2rem;
 	text-align: center;
+  user-select: text;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    row-gap: 1rem;
+  }
+
+  .input_middle {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .input_middle label {
+    width: 75%;
+  }
+
+  .submit_bottom {
+    margin-top: 0;
+  }
 }
