@@ -72,20 +72,27 @@
           $pisemna_cast_vaha = 24;
           $ustni_cast_vaha = 36;
         };
-      
+
         $pisemna_cast = $_POST["pisemna"]; // Načtení výsledku inputu do "paměti"
         $ustni_cast = $_POST["ustni"]; // Načtení výsledku inputu do "paměti"
 
-        $konecny_vysledek = (($pisemna_cast / $pisemna_cast_vaha) * 40) + (($ustni_cast / $ustni_cast_vaha) * 60);
+        $konecny_vysledek = (($pisemna_cast / $pisemna_cast_vaha) * 40) + (($ustni_cast / $ustni_cast_vaha) * 60); // Výsledek v % po celém výpočtu
+
+        // Přepočet na výslednou známku
 
         if ($konecny_vysledek > 87) {
           $vysledna_znamka = 1;
         } else if ($konecny_vysledek > 74 && $konecny_vysledek <= 87) {
           $vysledna_znamka = 2;
-        } else if () {}
+        } else if ($konecny_vysledek > 59 && $konecny_vysledek <= 74) {
+          $vysledna_znamka = 3;
+        } else if ($konecny_vysledek >= 44 && $konecny_vysledek <= 59) {
+          $vysledna_znamka = 4;
+        } else if ($konecny_vysledek < 44) {
+          $vysledna_znamka = 5;
+        }
 
-        echo $predmet . "<br>" . $konecny_vysledek . " %";
-      
+        echo $predmet . "<br>" . "Písemná část " . $pisemna_cast . " bodů | " . "Ústní část " . $ustni_cast . " bodů<br>" . round($konecny_vysledek, 2) . " %" . " | známka " . $vysledna_znamka;
       };
       ?>
     </div>
