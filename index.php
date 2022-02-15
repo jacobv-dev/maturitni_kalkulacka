@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Maturitní kalkulačka</title>
   <meta name="google" content="notranslate" />
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="app.js"></script>
 </head>
 
 <style>
@@ -20,29 +22,29 @@
 
       <div class="radio_up">
         <label>
-          <input type="radio" name="radio" value="cj" checked />
+          <input type="radio" name="radio" id="jazyk" value="cj" checked />
           <span>Český jazyk</span>
         </label>
 
         <label>
-          <input type="radio" name="radio" value="aj" />
+          <input type="radio" name="radio" id="jazyk1" value="aj" />
           <span>Anglický jazyk</span>
         </label>
 
         <label>
-          <input type="radio" name="radio" value="jcj" />
+          <input type="radio" name="radio" id="jazyk2" value="jcj" />
           <span>Jiný cizí jazyk</span>
         </label>
       </div>
 
       <div class="input_middle">
         <label>
-          <input type="number" name="pisemna" placeholder="BODY" min="0" max="30" required />
+          <input type="number" id="pis" name="pisemna" placeholder="BODY" min="0" max="30" required />
           <span>Písemná část</span>
         </label>
 
         <label>
-          <input type="number" name="ustni" placeholder="BODY" min="0" max="36" required />
+          <input type="number" id="ust" name="ustni" placeholder="BODY" min="0" max="36" required />
           <span>Ústní část</span>
         </label>
       </div>
@@ -92,12 +94,12 @@
           $vysledna_znamka = 5;
         }
 
-        echo $predmet . "<br>" . "Písemná část " . $pisemna_cast . " bodů | " . "Ústní část " . $ustni_cast . " bodů<br>" . round($konecny_vysledek, 2) . " %" . " | známka " . $vysledna_znamka;
+        echo $predmet . "<br>" . "Pís. " . $pisemna_cast . " bodů | " . "Úst. " . $ustni_cast . " bodů<br>" . "<p>" . round($konecny_vysledek, 2) . " %" . "&nbsp;&nbsp;&nbsp;&nbsp; známka " . $vysledna_znamka ."</p>"  ;
       };
       ?>
     </div>
 
-    <p style="position: absolute; bottom: 0; left: 0; text-align: center; width: 100%; margin: .75rem 0; font-size: .75rem;">&copy; Jakub Vorel, Robert Hlad, Tomáš Foltyn</p>
+    <p style="position: absolute; bottom: 0; left: 0; text-align: center; width: 100%; margin: .75rem 0; font-size: .75rem;">&copy; Jakub Vorel, Robert Hlad, Tomáš Foltyn | <a style="color: inherit;" href="kalkulacka.xlsx" target="_blank">Excel kalkulačka ke stažení</a></p>
   </div>
 
 </body>

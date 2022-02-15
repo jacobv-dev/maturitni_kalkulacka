@@ -14,7 +14,7 @@
 body {
   font-family: "Inter", sans-serif;
   color: #000021;
-  font-size: calc(1em + 1.25vw);
+  font-size: calc(1em + 1vw);
   background-color: #e6e6ef;
 }
 
@@ -29,7 +29,7 @@ label {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  margin-bottom: 0.375em;
+  margin-bottom: .5rem;
 }
 
 .radio_up label input {
@@ -81,6 +81,7 @@ label span {
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
+  padding: 1rem;
 }
 
 .radio_up {
@@ -152,6 +153,15 @@ label span {
 .answer {
 	text-align: center;
   user-select: text;
+}
+
+.answer p {
+	background: red;
+	color: white;
+	border-radius:5px;
+	padding: 0.5rem;
+	margin-top:0.75rem;
+	
 }
 
 @media only screen and (max-width: 600px) {
