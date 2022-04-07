@@ -61,27 +61,34 @@
 
         $select = $_POST["radio"];
 
-        if ($select == "cj") { // Načtení výsledku radio buttonu
+        // Načtení výsledku radio buttonu
+        if ($select == "cj") {
           $predmet = "Čeština";
           $pisemna_cast_vaha = 30;
           $ustni_cast_vaha = 28;
+          $pisemna_cast_min = 12;
+          $ustni_cast_min = 13;
         } else if ($select == "aj") {
           $predmet = "Angličtina";
           $pisemna_cast_vaha = 24;
           $ustni_cast_vaha = 18;
+          $pisemna_cast_min = 11;
+          $ustni_cast_min = 8;
         } else if ($select == "jcj") {
           $predmet = "Jiný cizí jazyk";
           $pisemna_cast_vaha = 24;
           $ustni_cast_vaha = 36;
+          $pisemna_cast_min = 16;
+          $ustni_cast_min = 8;
         };
 
-        $pisemna_cast = $_POST["pisemna"]; // Načtení výsledku inputu
-        $ustni_cast = $_POST["ustni"]; // Načtení výsledku inputu
+        // Načtení výsledku z inputů
+        $pisemna_cast = $_POST["pisemna"];
+        $ustni_cast = $_POST["ustni"];
 
         $konecny_vysledek = (($pisemna_cast / $pisemna_cast_vaha) * 40) + (($ustni_cast / $ustni_cast_vaha) * 60); // Výsledek v % po celém výpočtu
 
         // Přepočet na výslednou známku
-
         if ($konecny_vysledek > 87) {
           $vysledna_znamka = 1;
         } else if ($konecny_vysledek > 74 && $konecny_vysledek <= 87) {
@@ -94,7 +101,19 @@
           $vysledna_znamka = 5;
         }
 
-        echo $predmet . "<br>" . "Pís. " . $pisemna_cast . " bodů | " . "Úst. " . $ustni_cast . " bodů<br>" . "<p>" . number_format($konecny_vysledek, 2, ',', ' ') . " %" . "&nbsp;&nbsp;&nbsp;&nbsp; známka " . $vysledna_znamka ."</p>"  ;
+        // Pokud je počet bodů z jedné, nebo obou částí menší než minimaĺní dovolený počet bodů, vypíše se upozornění
+        if ($pisemna_cast < $pisemna_cast_min || $ustni_cast < $ustni_cast_min) {
+          $neuspel = "Neuspěl";
+        }
+
+        // Výpis obecných informací
+        $info = $predmet . "<br>" . "Pís. " . $pisemna_cast . " bodů | " . "Úst. " . $ustni_cast . " bodů";
+
+        if (!isset($neuspel)) { // Pokud není nastavena proměnná neuspěl, vypíše se výsledek
+          echo $info . "<br>" . "<p>" . number_format($konecny_vysledek, 2, ',', ' ') . " %" . "&nbsp;&nbsp;&nbsp;&nbsp; známka " . $vysledna_znamka . "</p>";
+        } else {
+          echo $info . "<br>" . "<p>" . $neuspel . "</p>";
+        }
       };
       ?>
     </div>
