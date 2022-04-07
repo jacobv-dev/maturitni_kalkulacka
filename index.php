@@ -70,7 +70,7 @@
           $pisemna_cast_vaha = 24;
           $ustni_cast_vaha = 18;
         } else if ($select == "jcj") {
-          $predmet = "Jiný cízí jazyk";
+          $predmet = "Jiný cizí jazyk";
           $pisemna_cast_vaha = 24;
           $ustni_cast_vaha = 36;
         };
@@ -94,7 +94,7 @@
           $vysledna_znamka = 5;
         }
 
-        echo $predmet . "<br>" . "Pís. " . $pisemna_cast . " bodů | " . "Úst. " . $ustni_cast . " bodů<br>" . "<p>" . round($konecny_vysledek, 2) . " %" . "&nbsp;&nbsp;&nbsp;&nbsp; známka " . $vysledna_znamka ."</p>"  ;
+        echo $predmet . "<br>" . "Pís. " . $pisemna_cast . " bodů | " . "Úst. " . $ustni_cast . " bodů<br>" . "<p>" . number_format($konecny_vysledek, 2, ',', ' ') . " %" . "&nbsp;&nbsp;&nbsp;&nbsp; známka " . $vysledna_znamka ."</p>"  ;
       };
       ?>
     </div>
