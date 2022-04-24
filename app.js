@@ -27,11 +27,11 @@ $(document).ready(function () {
 
   $("#jazyk2").change(function () {
     if (this.value == "jcj") {
-      $("#pis").attr("placeholder", "0 - 24");
-      $("#pis").attr("max", "24");
+      $("#pis").attr("placeholder", "0 - 36");
+      $("#pis").attr("max", "36");
 
-      $("#ust").attr("placeholder", "0 - 36");
-      $("#ust").attr("max", "36");
+      $("#ust").attr("placeholder", "0 - 18");
+      $("#ust").attr("max", "18");
     }
   });
 });

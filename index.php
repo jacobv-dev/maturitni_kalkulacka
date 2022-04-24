@@ -76,8 +76,8 @@
           $ustni_cast_min = 8;
         } else if ($select == "jcj") {
           $predmet = "Jiný cizí jazyk";
-          $pisemna_cast_vaha = 24;
-          $ustni_cast_vaha = 36;
+          $pisemna_cast_vaha = 36;
+          $ustni_cast_vaha = 18;
           $pisemna_cast_min = 16;
           $ustni_cast_min = 8;
         };
@@ -118,7 +118,7 @@
       ?>
     </div>
 
-    <p style="position: absolute; bottom: 0; left: 0; text-align: center; width: 100%; margin: .75rem 0; font-size: .75rem;">&copy; Jakub Vorel, Robert Hlad, Tomáš Foltyn | <a style="color: inherit;" href="kalkulacka.xlsx" target="_blank">Excel kalkulačka ke stažení</a></p>
+    <p style="position: absolute; bottom: 0; left: 0; text-align: center; width: 100%; margin: .75rem 0; font-size: .75rem;">&copy; Jakub Vorel, Robert Hlad | <a style="color: inherit;" href="kalkulacka.xlsx" target="_blank">Excel kalkulačka ke stažení</a> Tomáš Foltyn</p>
   </div>
 
 </body>
